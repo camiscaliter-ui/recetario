@@ -1,0 +1,44 @@
+titulo: Sopa de calabaza
+subtitulo: Estilo colombiano
+tipo: salado
+veggie: true
+tiempo_min: 45
+dificultad: Fácil
+porciones: 4
+unidad: porciones
+fotos: [original.jpg]
+version_pregunta: ¿Qué versión?
+versiones:
+  - nombre: Con puerro y jengibre
+    tiempo_min: 45
+    ingredientes:
+      - items:
+          - 1 calabaza
+          - 1/2 cebolla
+          - 1 puerro
+          - 1 diente de ajo (entero)
+          - Jengibre rallado
+          - 1 l de agua
+          - 2 cdas. de Casancrem
+          - Aceite de oliva, sal y pimienta
+    pasos:
+      - items:
+          - Pelar y cortar la calabaza y la cebolla.
+          - Poner todo en una olla (ajo, calabaza, cebolla, puerro y jengibre) con aceite de oliva. Mezclar y dorar.
+          - Cuando la calabaza esté caramelizada, levantar el fondo de cocción con el agua.
+          - Tapar y cocinar hasta que esté bien cocida.
+          - Fuera del fuego, agregar el Casancrem y procesar.
+          - Terminar con un toque de pimienta arriba.
+  - nombre: Cremosa con queso
+    tiempo_min: 40
+    ingredientes:
+      - items:
+          - 1 calabaza
+          - 200 ml de crema de leche
+          - 10 cdas. de queso crema
+          - 200 ml de agua
+          - Sal a gusto
+    pasos:
+      - items:
+          - Hacer un puré con la calabaza.
+          - Agregar la crema, el queso, el agua y la sal, y procesar.

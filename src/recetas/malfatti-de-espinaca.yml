@@ -1,0 +1,28 @@
+titulo: Malfatti de espinaca
+autora: Paulina
+tipo: salado
+veggie: true
+tiempo_min: 40
+dificultad: Media
+porciones: 3
+unidad: porciones
+fotos: [original.jpg]
+ingredientes:
+  - items:
+      - 350 g de ricota
+      - 1 atado de espinaca
+      - 1 huevo
+      - 1/2 taza de harina
+      - 1/2 taza de queso rallado
+      - 1/2 cdita. de nuez moscada
+      - Sal y pimienta
+pasos:
+  - items:
+      - Cocinar la espinaca al vapor unos segundos. Picarla chiquita y escurrirla bien.
+      - Escurrir la ricota.
+      - Mezclar la ricota con sal, pimienta, nuez moscada, el huevo, el queso, la espinaca y la harina.
+      - Con todo bien unido, y ayudándose con harina, formar las bolitas.
+      - En una olla con agua hirviendo y sal, cocinar las bolitas de a poco, aprox. un minuto y medio. Cuando flotan, sacarlas.
+      - Ir poniéndolas en una fuente para horno con la salsa elegida y espolvorear un poco de pan rallado para dorar.
+      - Dejar unos minutos en el horno, solo hasta dorar.
+nota: "Variante sin harina: 500 g de ricota, 2 atados de espinaca bien escurridos, sal, pimienta, nuez moscada y queso rallado. Procesar todo con la minipimer, formar bolitas con un poco de harina y hervir."

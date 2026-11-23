@@ -1,0 +1,253 @@
+---
+import Base from '../../layouts/Base.astro';
+import { recetas, formatTiempo } from '../../lib/recetas.js';
+
+export function getStaticPaths() {
+  return recetas.map((r) => ({ params: { slug: r.slug }, props: { r } }));
+}
+const { r } = Astro.props;
+const multi = r.versiones.length > 1;
+---
+<Base title={`${r.titulo} · Recetario`}>
+  <main class="wrap page" data-base={r.porciones}>
+    <a href="/" class="mono back">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Recetas
+    </a>
+
+    <div class="layout">
+      <div class="col-hero">
+        <figure class="hero">
+          <img id="ilus" src={r.imagen} alt={`Ilustración de ${r.titulo}`} width="600" height="480" />
+          {r.fotos.length > 0 && (
+            <div id="fotos" class="fotos" hidden>
+              {r.fotos.map((f, i) => <img src={f} alt={`Foto original de la receta, página ${i + 1}`} loading="lazy" />)}
+            </div>
+          )}
+          {r.fotos.length > 0 && (
+            <button id="verFoto" type="button" class="mono pill-red">Ver foto original</button>
+          )}
+        </figure>
+      </div>
+
+      <div class="col-body">
+        <header class="intro">
+          <h1 class="display title">{r.titulo}</h1>
+          {(r.subtitulo || r.autora) && (
+            <p class="mono sub">{[r.subtitulo, r.autora && `Receta de ${r.autora}`].filter(Boolean).join(' · ')}</p>
+          )}
+          <div class="tags">
+            <span class={`tag ${r.tipo === 'dulce' ? 'tag-blue' : 'tag-red'}`}>{r.tipo === 'dulce' ? 'Dulce' : 'Salado'}</span>
+            {r.veggie && <span class="tag">Veggie</span>}
+            <span class="tag" id="tagTiempo">{formatTiempo(r.versiones[0].tiempo_min)}</span>
+            <span class="tag">{r.dificultad}</span>
+          </div>
+          {r.tiempo_nota && <p class="note">{r.tiempo_nota}</p>}
+          {r.nota && <p class="note">{r.nota}</p>}
+          {r.hayEstimados && <p class="note small"><span class="est">estimado</span> = dato que no estaba en la receta original.</p>}
+        </header>
+
+        {multi && (
+          <div class="versiones">
+            <span class="mono label">{r.version_pregunta || '¿Qué versión?'}</span>
+            <div class="seg" role="group" aria-label="Versión de la receta">
+              {r.versiones.map((v, i) => (
+                <button type="button" class="seg-btn" data-v={i} data-tiempo={formatTiempo(v.tiempo_min)} aria-pressed={i === 0 ? 'true' : 'false'}>
+                  <span class="display seg-name">{v.nombre}</span>
+                  <span class="mono seg-time">{formatTiempo(v.tiempo_min)}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="porciones">
+          <div>
+            <span class="mono label strong">{r.unidad === 'porciones' ? 'Porciones' : r.unidad.charAt(0).toUpperCase() + r.unidad.slice(1)}</span>
+            <span class="mono label muted">Original: {r.porciones}</span>
+          </div>
+          <div class="stepper">
+            <button type="button" id="menos" class="step-btn" aria-label="Menos">−</button>
+            <span id="porc" class="display num" aria-live="polite">{r.porciones}</span>
+            <button type="button" id="mas" class="step-btn" aria-label="Más">+</button>
+          </div>
+        </div>
+
+        {r.versiones.map((v, vi) => {
+          let n = 0;
+          return (
+            <div class="version" data-v={vi} hidden={vi !== 0}>
+              <section>
+                <h2 class="display h2">Ingredientes</h2>
+                {v.ingredientes.map((g) => (
+                  <>
+                    {g.grupo && <h3 class="mono sub-h">{g.grupo}</h3>}
+                    <ul class="ings">
+                      {g.items.map((it) => (
+                        <li>
+                          <label class="ing">
+                            <input type="checkbox" />
+                            <span><span class="qty" data-base={it.text}>{it.text}</span>{it.est && <span class="est">estimado</span>}</span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ))}
+              </section>
+              <section>
+                <h2 class="display h2">Pasos</h2>
+                {v.pasos.map((g) => (
+                  <>
+                    {g.grupo && <h3 class="mono sub-h">{g.grupo}</h3>}
+                    <ol class="pasos">
+                      {g.items.map((it) => {
+                        n += 1;
+                        return (
+                          <li>
+                            <span class="display n">{n}</span>
+                            <span>{it.text}{it.est && <span class="est">estimado</span>}</span>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </>
+                ))}
+              </section>
+            </div>
+          );
+        })}
+
+        <label class="awake">
+          <input type="checkbox" id="awake" />
+          <span>Mantener la pantalla encendida mientras cocino</span>
+        </label>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .page { padding-top: 16px; padding-bottom: 56px; }
+  .back { display: inline-flex; align-items: center; gap: 6px; height: 44px; font-size: 12px; font-weight: 500; text-decoration: none; }
+  .layout { display: grid; gap: 24px; }
+  @media (min-width: 900px) {
+    .layout { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; align-items: start; }
+    .col-hero { position: sticky; top: 24px; }
+  }
+  .hero { margin: 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); padding: 12px 0; display: flex; flex-direction: column; gap: 10px; }
+  .hero img#ilus { width: 100%; aspect-ratio: 5 / 4; object-fit: contain; }
+  .fotos { display: flex; flex-direction: column; gap: 10px; }
+  .fotos img { width: 100%; border-radius: 6px; }
+  .pill-red { align-self: flex-end; height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: var(--red); color: var(--bg); font-size: 11px; font-weight: 500; cursor: pointer; }
+  .col-body { display: flex; flex-direction: column; gap: 24px; }
+  .intro { display: flex; flex-direction: column; gap: 10px; }
+  .title { margin: 0; font-size: clamp(56px, 12vw, 96px); color: var(--red); }
+  .sub { margin: 0; font-size: 11px; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .tag-blue { background: var(--blue); border-color: var(--blue); }
+  .tag-red { background: var(--red); border-color: var(--red); color: var(--bg); }
+  .note { margin: 0; color: var(--muted); font-size: 15px; }
+  .note.small { font-size: 13px; }
+  .label { font-size: 12px; display: block; }
+  .strong { font-weight: 500; }
+  .muted { color: var(--muted); font-size: 10.5px; }
+  .versiones { display: flex; flex-direction: column; gap: 8px; }
+  .seg { display: flex; gap: 4px; padding: 4px; border: 1.5px solid var(--ink); border-radius: 28px; }
+  .seg-btn { flex: 1; min-height: 56px; padding: 6px 10px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+  .seg-btn[aria-pressed="true"] { background: var(--red); color: var(--bg); }
+  .seg-name { font-size: 17px; line-height: 1.05; text-align: center; }
+  .seg-time { font-size: 11px; }
+  .porciones { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+  .stepper { display: flex; align-items: center; gap: 12px; }
+  .step-btn { width: 44px; height: 44px; border: 1.5px solid var(--red); border-radius: 999px; background: transparent; color: var(--red); font: 500 20px var(--mono); cursor: pointer; }
+  .num { min-width: 40px; text-align: center; font-size: 34px; }
+  .version { display: flex; flex-direction: column; gap: 28px; }
+  .version[hidden] { display: none; }
+  .h2 { margin: 0 0 6px; font-size: 36px; color: var(--red); }
+  .sub-h { margin: 16px 0 2px; font-size: 12px; font-weight: 500; color: var(--muted); }
+  .ings { list-style: none; margin: 0; padding: 0; }
+  .ing { display: flex; align-items: center; gap: 12px; min-height: 46px; padding: 6px 0; border-bottom: 1px solid var(--ink); cursor: pointer; }
+  .ing input, .awake input { width: 20px; height: 20px; margin: 0; accent-color: var(--red); flex: none; }
+  .ing:has(input:checked) { color: var(--muted); text-decoration: line-through; }
+  .pasos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  .pasos li { display: flex; gap: 14px; align-items: baseline; line-height: 1.55; }
+  .n { flex: none; width: 30px; font-size: 26px; color: var(--red); line-height: 1; }
+  .awake { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 18px; background: var(--blue); border-radius: 999px; font-size: 15px; cursor: pointer; }
+</style>
+
+<script>
+  const page = document.querySelector('.page');
+  const base = Number(page.dataset.base);
+  let porc = base;
+  const porcEl = document.getElementById('porc');
+
+  const FR = { 0: '', 0.25: '1/4', 0.5: '1/2', 0.75: '3/4' };
+  const frac = (v) => {
+    const q = Math.max(0.25, Math.round(v * 4) / 4);
+    const w = Math.floor(q);
+    const r = FR[q - w];
+    return w ? (r ? `${w} y ${r}` : String(w)) : r;
+  };
+  const parseNum = (s) => {
+    if (s.includes('/')) { const [a, b] = s.split('/').map(Number); return a / b; }
+    return Number(s.replace(',', '.'));
+  };
+  const fmt = (v, metric, medida) => {
+    if (!metric && !medida) return v < 1 ? frac(v) : String(Math.max(1, Math.round(v)));
+    if (metric) {
+      if (v >= 1000 && metric === 'g') return String(Math.round(v / 50) * 50);
+      return String(v >= 20 ? Math.round(v / 5) * 5 : Math.round(v * 10) / 10).replace('.', ',');
+    }
+    return v < 4 ? frac(v) : String(Math.round(v));
+  };
+  // "2 y 1/4 tazas…", "1/2 taza…", "200 g…", "4 o 5 huevos", "1,2 kg…"
+  const RE = /^(\d+\/\d+|\d+(?:[.,]\d+)?)(?:\s+y\s+(\d+\/\d+))?(?:\s+o\s+(\d+))?(\s+(?:g|kg|ml|l)\b)?/;
+  function scale(text, f) {
+    if (f === 1) return text;
+    const m = text.match(RE);
+    if (!m) return text;
+    let v = parseNum(m[1]) + (m[2] ? parseNum(m[2]) : 0);
+    const metric = m[4] ? m[4].trim() : null;
+    const medida = /^\s*(tazas?|cdas?\.?|cditas?\.?|cucharad)/i.test(text.slice(m[0].length)) || m[1].includes('/') || !!m[2];
+    let out = fmt(v * f, metric, medida);
+    if (m[3]) out += ` o ${fmt(Number(m[3]) * f, metric, medida)}`;
+    return out + (m[4] || '') + text.slice(m[0].length);
+  }
+  function render() {
+    porcEl.textContent = porc;
+    const f = porc / base;
+    document.querySelectorAll('.qty').forEach((el) => { el.textContent = scale(el.dataset.base, f); });
+  }
+  const step = base >= 10 ? 5 : 1;
+  document.getElementById('menos').addEventListener('click', () => { porc = Math.max(step, porc - step); render(); });
+  document.getElementById('mas').addEventListener('click', () => { porc = Math.min(base * 6, porc + step); render(); });
+
+  document.querySelectorAll('.seg-btn').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.seg-btn').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('.version').forEach((v) => { v.hidden = v.dataset.v !== b.dataset.v; });
+    document.getElementById('tagTiempo').textContent = b.dataset.tiempo;
+  }));
+
+  const ver = document.getElementById('verFoto');
+  if (ver) ver.addEventListener('click', () => {
+    const fotos = document.getElementById('fotos');
+    const ilus = document.getElementById('ilus');
+    const showFotos = fotos.hidden;
+    fotos.hidden = !showFotos;
+    ilus.hidden = showFotos;
+    ver.textContent = showFotos ? 'Ver ilustración' : 'Ver foto original';
+  });
+
+  let lock = null;
+  const awake = document.getElementById('awake');
+  if (!('wakeLock' in navigator)) awake.closest('label').hidden = true;
+  awake.addEventListener('change', async () => {
+    try {
+      if (awake.checked) { lock = await navigator.wakeLock.request('screen'); lock.addEventListener('release', () => { if (document.visibilityState === 'visible') awake.checked = false; }); }
+      else if (lock) { await lock.release(); lock = null; }
+    } catch { awake.checked = false; }
+  });
+  document.addEventListener('visibilitychange', async () => {
+    if (awake.checked && document.visibilityState === 'visible') { try { lock = await navigator.wakeLock.request('screen'); } catch {} }
+  });
+</script>

@@ -1,0 +1,31 @@
+titulo: Sopa de cebolla
+tipo: salado
+veggie: true
+tiempo_min: 75
+dificultad: Media
+porciones: 4
+unidad: porciones
+fotos: [original.jpg]
+ingredientes:
+  - items:
+      - 4 cebollas grandes, cortadas en pluma
+      - 4 cdas. de manteca
+      - 2 cdas. de aceite de oliva
+      - 2 cditas. de azúcar
+      - 2 cdas. de harina 0000/000
+      - 1 taza de vino blanco seco
+      - 6 tazas de caldo de verdura
+      - 1 hoja de laurel
+      - 1 baguette o pan francés, en rodajas gruesas
+      - 2 tazas de queso gruyère
+      - Sal y pimienta
+pasos:
+  - items:
+      - En una cacerola, derretir la manteca con el aceite. A fuego medio/alto, agregar las cebollas y el azúcar y saltear 15–20 minutos, hasta que estén doradas y caramelizadas.
+      - Agregar la harina y mezclar bien. Cocinar unos minutos, revolviendo constantemente.
+      - Agregar el vino blanco y dejar que reduzca unos minutos.
+      - Agregar el caldo y el laurel y llevar a ebullición. Bajar a fuego medio/bajo y cocinar 30–40 minutos.
+      - Mientras tanto, tostar el pan.
+      - Retirar el laurel y salpimentar.
+      - Servir en un recipiente apto para horno, con la tostada y el queso arriba.
+      - Hornear unos minutos, hasta gratinar.

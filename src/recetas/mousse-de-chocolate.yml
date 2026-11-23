@@ -1,0 +1,25 @@
+titulo: Mousse de chocolate
+subtitulo: De 2 ingredientes
+autora: Paulina
+tipo: dulce
+veggie: true
+tiempo_min: 140
+tiempo_nota: 20 min de preparación + mínimo 2 h de heladera
+dificultad: Fácil
+porciones: 6
+unidad: porciones
+fotos: [original-1.jpg, original-2.jpg]
+ingredientes:
+  - items:
+      - 320 g de chocolate semiamargo
+      - 600 g de crema de leche
+      - Para decorar (opcional), menta, almendras o chocolate rallado
+pasos:
+  - items:
+      - Poner la crema en un bowl y batir con batidora. Importante, que no quede batida del todo ni termine de montarse (consistencia mousse).
+      - Derretir el chocolate a baño María, o en el microondas con toques de 30 segundos a temperatura baja. Tiene que quedar totalmente derretido.
+      - Una vez derretido, agregar 2 cucharadas de la crema batida y mezclar bien.
+      - Batir con batidora 1 minuto. El chocolate tiene que empezar a quedar brillante.
+      - Incorporar el resto de la crema al chocolate (nunca al revés). Ir agregando de a 2 cucharadas y revolviendo en forma envolvente, hasta terminar.
+      - Cuando esté completamente unida y consistente, llevar a la heladera mínimo 2 horas.
+      - Decorar con almendras, menta o chocolate rallado.

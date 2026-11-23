@@ -1,0 +1,68 @@
+titulo: Pastel de papa
+tipo: salado
+veggie: false
+tiempo_min: 210
+dificultad: Media
+porciones: 4
+unidad: porciones
+version_pregunta: ¿Con qué carne?
+versiones:
+  - nombre: Desmechada
+    tiempo_min: 210
+    ingredientes:
+      - grupo: Relleno
+        items:
+          - 570 g de roast beef (polpa sceltissima)
+          - 2 cebollas medianas
+          - 2 dientes de ajo
+          - 200 ml de tomate triturado o passata
+          - 300 ml de caldo de verduras
+          - 100 ml de vino tinto (Barbera d'Asti)
+          - Aceite de oliva, sal y pimienta
+          - Pimentón y orégano
+          - 1 hoja de laurel
+    pasos:
+      - grupo: Relleno
+        items:
+          - Cortar la carne en 2 o 3 trozos grandes, salpimentar y dorarla por todos sus lados en una olla con aceite de oliva. Retirar y reservar.
+          - En la misma olla, cocinar las cebollas picadas unos 8 minutos. Sumar el ajo y cocinar 1 minuto más.
+          - Agregar el vino, raspar el fondo para levantar todo lo dorado y dejar evaporar 2–3 minutos.
+          - Agregar el tomate, el caldo, el pimentón, el orégano y el laurel. Volver a poner la carne; el líquido tiene que llegar a la mitad o dos tercios de la carne.
+          - Tapar y cocinar a fuego mínimo 2–3 horas. Revisar cada tanto y agregar caldo si se queda sin líquido.
+          - Cuando la carne esté muy tierna, retirarla y desmecharla con dos tenedores.
+          - Devolverla a la olla y cocinar destapado 10–15 minutos, hasta que la salsa quede espesa y la carne bien jugosa.
+  - nombre: Molida
+    tiempo_min: 75
+    ingredientes:
+      - grupo: Relleno
+        items:
+          - 600 g de carne molida [estimado]
+          - 2 cebollas medianas
+          - 2 dientes de ajo
+          - 200 ml de tomate triturado o passata
+          - 100 ml de caldo de verduras [estimado]
+          - 100 ml de vino tinto (Barbera d'Asti)
+          - Aceite de oliva, sal y pimienta
+          - Pimentón y orégano
+          - 1 hoja de laurel
+    pasos:
+      - grupo: Relleno
+        items:
+          - Cocinar las cebollas picadas unos 8 minutos. Sumar el ajo y cocinar 1 minuto más.
+          - Agregar la carne molida y dorarla bien, desarmándola con una cuchara.
+          - Agregar el vino, raspar el fondo y dejar evaporar 2–3 minutos.
+          - Sumar el tomate, el caldo, el pimentón, el orégano y el laurel. Cocinar destapado 20–25 minutos, hasta que espese. [estimado]
+ingredientes:
+  - grupo: Puré
+    items:
+      - 4 papas grandes
+      - 50 g de manteca [estimado]
+      - 150 ml de leche [estimado]
+      - Sal
+      - Nuez moscada, una pizquita (opcional)
+pasos:
+  - grupo: Puré y armado
+    items:
+      - Hervir las papas peladas en agua con sal hasta que estén tiernas. Pisarlas con la manteca, la leche caliente, sal y la nuez moscada. [estimado]
+      - Dejar que la carne se enfríe un poco antes de ponerla en la fuente. Tiene que quedar jugosa, pero sin exceso de líquido, para que el pastel mantenga la forma al cortarlo.
+      - Cubrir con el puré y hornear a 200 °C unos 20–25 minutos, hasta que se dore arriba. [estimado]

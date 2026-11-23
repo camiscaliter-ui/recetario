@@ -1,0 +1,23 @@
+titulo: Hummus
+tipo: salado
+veggie: true
+tiempo_min: 10
+dificultad: Fácil
+porciones: 6
+unidad: porciones
+ingredientes:
+  - items:
+      - 2 latas de garbanzos
+      - 2 dientes de ajo
+      - 1 cda. de tahini
+      - Jugo de limón, a gusto
+      - Sal, a gusto
+      - Aceite de oliva, a gusto
+      - Pimentón, a gusto
+pasos:
+  - items:
+      - Escurrir y enjuagar los garbanzos. Guardar un poco del líquido de la lata por si hace falta aflojar. [estimado]
+      - Procesar los garbanzos con el ajo, el tahini, el jugo de limón y la sal hasta que quede bien liso. [estimado]
+      - Si queda muy espeso, sumar de a poco el líquido de los garbanzos o agua fría, y un chorrito de aceite. [estimado]
+      - Probar y ajustar el limón y la sal.
+      - Servir en un plato haciendo un remolino con la cuchara, con un buen chorro de aceite de oliva y pimentón por arriba.

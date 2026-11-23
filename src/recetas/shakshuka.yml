@@ -1,0 +1,29 @@
+titulo: Shakshuka
+tipo: salado
+veggie: true
+tiempo_min: 35
+dificultad: Fácil
+porciones: 2
+unidad: porciones
+nota: Las cantidades van a ojo. Se calculan 2 huevos por persona.
+ingredientes:
+  - items:
+      - Morrón, en tiras
+      - Cebolla, en tiras
+      - Varios tomates, cortados chiquitos (mejor pelados)
+      - Pasta de tomate
+      - Agua, si hace falta
+      - 4 huevos
+      - Sal, pimienta, ajo, pimentón y comino
+      - Chile (opcional)
+      - Para servir, perejil, algún queso o tahini, y buen pan
+pasos:
+  - items:
+      - En una sartén grande, saltear el morrón y la cebolla en tiras.
+      - Para pelar los tomates, hacerles un corte superficial abajo y dejarlos 5 minutos en agua caliente. Cortarlos chiquitos.
+      - Agregar los tomates y dejar que se vaya haciendo tipo salsa.
+      - Sumar la pasta de tomate, y agua si hace falta.
+      - Condimentar con sal, pimienta, ajo, pimentón y comino, y un poco de chile si querés.
+      - Cuando la salsa tenga la textura que te gusta (más salsuda o más verdurosa), hacer huequitos con una cuchara y romper un huevo en cada uno. Un poquito de sal sobre cada huevo, y tapar.
+      - La salsa tiene que estar bien caliente, burbujeando, para que los huevos se cocinen rápido. Cuando la clara esté más o menos firme, sacar del fuego.
+      - Terminar con perejil, o algún queso o tahini, y comer con un buen pancito.

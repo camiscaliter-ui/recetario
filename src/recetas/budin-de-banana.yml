@@ -1,0 +1,27 @@
+titulo: Budín de banana
+tipo: dulce
+veggie: true
+tiempo_min: 80
+dificultad: Fácil
+porciones: 4
+unidad: budines chicos
+nota: Rinde 2 budines grandes o 4 chicos.
+fotos: [original.jpg]
+ingredientes:
+  - items:
+      - 200 g de manteca
+      - 2 bananas (380 g)
+      - 360 g de azúcar (casi 2 tazas)
+      - 360 g de harina 0000 (2 y 1/2 tazas)
+      - 3 huevos
+      - Sal
+      - 1 cdita. de esencia de vainilla
+      - 1 cdita. de bicarbonato de sodio, o 1 de Royal
+      - Nueces o chips de chocolate, a ojo
+pasos:
+  - items:
+      - Mezclar la manteca con el azúcar. Incorporar los huevos de a uno y mezclar.
+      - Agregar la vainilla y la banana ya pisada.
+      - Mezclar la harina, la sal y el bicarbonato, e incorporar.
+      - Agregar el chocolate o las nueces.
+      - Cocinar a 170 °C durante 1 hora aprox., o menos.

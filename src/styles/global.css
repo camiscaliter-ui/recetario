@@ -1,0 +1,24 @@
+:root {
+  --bg: #FAF4EA;
+  --ink: #141414;
+  --muted: #5C5751;
+  --red: #B3282D;
+  --blue: #CDE6E8;
+  --display: 'Archivo', system-ui, sans-serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--display); font-size: 16px; line-height: 1.5; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+button { font: inherit; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em; }
+.display { font-family: var(--display); font-stretch: 75%; font-weight: 800; letter-spacing: -0.03em; line-height: 0.88; }
+.chip { flex: none; height: 40px; padding: 0 14px; border: 1.5px solid var(--red); border-radius: 999px; background: var(--bg); color: var(--red); font: 500 12px var(--mono); letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--red); color: var(--bg); }
+.tag { font: 500 11px var(--mono); letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 1.5px solid var(--ink); white-space: nowrap; }
+.est { font: 500 10px var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); border: 1px solid var(--muted); border-radius: 999px; padding: 1px 7px; margin-left: 6px; white-space: nowrap; vertical-align: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
