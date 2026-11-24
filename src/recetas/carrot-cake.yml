@@ -1,0 +1,38 @@
+titulo: Carrot cake
+tipo: dulce
+veggie: true
+tiempo_min: 60
+tiempo_nota: 15 min de preparación + 45 min de horno
+dificultad: Fácil
+porciones: 8
+unidad: porciones
+nota: En vez del glaseado, también se puede cubrir con un frosting de queso crema.
+ingredientes:
+  - items:
+      - 3/4 taza de azúcar (175 g)
+      - 3/4 taza de aceite (175 ml)
+      - 3 huevos
+      - 1 y 1/2 taza de harina leudante (o harina común + polvo de hornear)
+      - 1 taza apretadita de zanahorias ralladas finas (unas 2 zanahorias medianas)
+      - 1/2 cdita. de nuez moscada
+      - 1 cdita. de bicarbonato de sodio
+      - 1 cdita. de canela
+      - Ralladura de medio limón
+  - grupo: Glaseado
+    items:
+      - 4 cdas. de azúcar impalpable
+      - 6 cditas. de jugo de limón (aprox.)
+pasos:
+  - items:
+      - Precalentar el horno a 180 °C y enmantecar y enharinar un molde para torta.
+      - En un bol, batir los huevos con el azúcar hasta unir.
+      - Agregar el aceite y unir bien.
+      - Incorporar la zanahoria rallada y la ralladura de limón. Unir.
+      - Aparte, mezclar la harina, el bicarbonato, la canela y la nuez moscada.
+      - Agregar los secos tamizados a la mezcla húmeda y mezclar con movimientos envolventes hasta que no quede ni un grumo.
+      - Pasar al molde y hornear unos 45 minutos, o hasta que esté dorada.
+  - grupo: Glaseado
+    items:
+      - Mezclar el azúcar impalpable con 4 cditas. del jugo de limón y revolver bien un rato. Al principio parece que falta líquido, pero hay que seguir revolviendo; lo peor es que se pase de líquido.
+      - Si después de revolver bien le falta, agregar las últimas cditas. de a una. Tiene que quedar blanco y bien espeso.
+      - Bañar la torta con el glaseado.
