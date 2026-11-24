@@ -1,0 +1,24 @@
+titulo: Brownies
+autora: Judith
+tipo: dulce
+veggie: true
+tiempo_min: 60
+tiempo_nota: 15 min de preparación + 45 min de horno
+dificultad: Fácil
+porciones: 12
+unidad: porciones
+fotos: [original.jpg]
+ingredientes:
+  - items:
+      - 4 huevos
+      - 2 tazas de azúcar
+      - 100 g de chocolate para taza
+      - 1 pote de crema de leche (unos 200 ml) [estimado]
+      - 1 taza de harina leudante
+pasos:
+  - items:
+      - Batir los huevos con el azúcar hasta formar una crema blanca.
+      - Derretir el chocolate en el microondas con un poco de la crema.
+      - Agregarlo a los huevos mientras se sigue batiendo, y después sumar el resto de la crema.
+      - Al final, incorporar la taza de harina leudante.
+      - Hornear a horno suave (unos 160 °C) durante 45 minutos. [estimado]
